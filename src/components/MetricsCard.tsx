@@ -30,6 +30,12 @@ export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps
             { source: "Industry Reports", value: "73" },
             { source: "News Articles", value: "47" }
           ],
+          popularHashtags: ["#AWS", "#AWSdatacentres", "#AWSinCommunities", "#CloudComputing", "#Sustainability"],
+          recentArticles: [
+            { title: "AWS Expands Community Investment in Northern Virginia", date: "2024-03-10" },
+            { title: "Sustainable Data Centers: AWS Leading the Way", date: "2024-03-08" },
+            { title: "Community Impact: AWS Educational Programs", date: "2024-03-05" }
+          ],
           lastUpdated: "2024-03-14"
         };
       case "Students in Programs":
@@ -103,6 +109,31 @@ export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps
                 ))}
               </ul>
             </div>
+            {'recentArticles' in detailedInfo && (
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300">Recent Articles:</h4>
+                <ul className="mt-1 space-y-1">
+                  {detailedInfo.recentArticles.map((article, index) => (
+                    <li key={index} className="text-xs">
+                      <span className="text-gray-400">{article.title}</span>
+                      <span className="text-gray-500 ml-1">({article.date})</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {'popularHashtags' in detailedInfo && (
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300">Popular Hashtags:</h4>
+                <div className="mt-1 flex flex-wrap gap-1">
+                  {detailedInfo.popularHashtags.map((hashtag, index) => (
+                    <span key={index} className="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-300">
+                      {hashtag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="text-xs text-gray-500">
               Last updated: {detailedInfo.lastUpdated}
             </div>
