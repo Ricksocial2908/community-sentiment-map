@@ -6,17 +6,18 @@ import { Hotspot } from '@/lib/types';
 interface WorldMapProps {
   hotspots: Hotspot[];
   onHotspotClick: (hotspot: Hotspot) => void;
+  mapboxToken: string;
 }
 
-export const WorldMap = ({ hotspots, onHotspotClick }: WorldMapProps) => {
+export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProps) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
-    if (!mapContainer.current) return;
+    if (!mapContainer.current || !mapboxToken) return;
 
-    mapboxgl.accessToken = 'YOUR_MAPBOX_TOKEN'; // Replace with your token
+    mapboxgl.accessToken = mapboxToken;
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -148,10 +149,9 @@ export const WorldMap = ({ hotspots, onHotspotClick }: WorldMapProps) => {
     const interval = setInterval(spinGlobe, 1000);
 
     return () => {
-      clearInterval(interval);
       map.current?.remove();
     };
-  }, [hotspots, onHotspotClick]);
+  }, [hotspots, onHotspotClick, mapboxToken]);
 
   return (
     <div className="relative w-full h-screen">
