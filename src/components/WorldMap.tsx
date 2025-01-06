@@ -32,8 +32,7 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       touchZoomRotate: true,
       doubleClickZoom: true,
       scrollZoom: {
-        around: 'center',
-        smooth: true
+        around: 'center'
       }
     });
 
