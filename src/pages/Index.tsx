@@ -5,6 +5,7 @@ import { hotspots } from "@/data/hotspots";
 import { Hotspot } from "@/lib/types";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
@@ -17,10 +18,31 @@ const Index = () => {
     setIsPanelVisible(true);
   };
 
+  const validateMapboxToken = (token: string) => {
+    // Basic validation: Mapbox tokens start with 'pk.' for public tokens
+    return token.trim().startsWith('pk.');
+  };
+
   const handleSetToken = () => {
-    if (mapboxToken.trim()) {
-      setIsTokenSet(true);
+    if (!mapboxToken.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter a Mapbox token",
+        variant: "destructive",
+      });
+      return;
     }
+
+    if (!validateMapboxToken(mapboxToken)) {
+      toast({
+        title: "Invalid Token",
+        description: "Please enter a valid Mapbox public token starting with 'pk.'",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsTokenSet(true);
   };
 
   return (
