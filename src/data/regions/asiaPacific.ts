@@ -14,33 +14,33 @@ export const asiaPacificHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 1100,
-          sentiment: 89
+          sentiment: 89,
         },
         linkedin: {
           mentions: 780,
-          sentiment: 91
+          sentiment: 91,
         },
         news: {
           mentions: 290,
-          sentiment: 87
+          sentiment: 87,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Earthquake protection systems",
-        "Power grid redundancy",
-        "Advanced cooling technology"
+        "Tokyo Tech Innovation Center",
+        "Japan Region Data Center Expansion",
+        "APAC Cloud Infrastructure"
       ],
       mediumCost: [
-        "Network optimization",
-        "Security enhancement",
-        "Staff facility modernization"
+        "Japanese Tech Education Hub",
+        "Regional AI Research Center",
+        "Local IoT Development Lab"
       ],
       lowCost: [
-        "Energy efficiency programs",
-        "Local talent development",
-        "Disaster response training"
+        "Japanese Dev Community Support",
+        "Local Tech Conferences",
+        "Regional STEM Programs"
       ]
     }
   },
@@ -57,33 +57,33 @@ export const asiaPacificHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 890,
-          sentiment: 86
+          sentiment: 86,
         },
         linkedin: {
           mentions: 680,
-          sentiment: 88
+          sentiment: 88,
         },
         news: {
           mentions: 260,
-          sentiment: 85
+          sentiment: 85,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Cooling system modernization",
-        "Network infrastructure upgrade",
-        "Security system enhancement"
+        "ASEAN Region Data Hub",
+        "Singapore Innovation Campus",
+        "Southeast Asia Cloud Center"
       ],
       mediumCost: [
-        "Power efficiency optimization",
-        "Staff facilities improvement",
-        "Backup systems upgrade"
+        "Regional Fintech Lab",
+        "ASEAN Tech Training Center",
+        "Local Startup Accelerator"
       ],
       lowCost: [
-        "Environmental monitoring",
-        "Staff training programs",
-        "Community engagement"
+        "Southeast Asian Dev Programs",
+        "Local Tech Community Events",
+        "Regional STEM Initiatives"
       ]
     }
   }

@@ -14,33 +14,33 @@ export const europeHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 820,
-          sentiment: 83
+          sentiment: 83,
         },
         linkedin: {
           mentions: 640,
-          sentiment: 87
+          sentiment: 87,
         },
         news: {
           mentions: 250,
-          sentiment: 84
+          sentiment: 84,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Sustainable power solutions",
-        "Network infrastructure expansion",
-        "Advanced security systems"
+        "European Green Data Center",
+        "EU Cloud Innovation Hub",
+        "Regional Tech Campus"
       ],
       mediumCost: [
-        "Cooling efficiency improvements",
-        "Backup system upgrades",
-        "Staff training facilities"
+        "EU Tech Skills Program",
+        "European Startup Support",
+        "Regional Research Center"
       ],
       lowCost: [
-        "Green energy initiatives",
-        "Local community engagement",
-        "Operational optimization"
+        "Local Community Engagement",
+        "EU Tech Conferences",
+        "Regional Dev Meetups"
       ]
     }
   }

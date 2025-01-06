@@ -14,33 +14,33 @@ export const northAmericaHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 1200,
-          sentiment: 85
+          sentiment: 85,
         },
         linkedin: {
           mentions: 850,
-          sentiment: 92
+          sentiment: 92,
         },
         news: {
           mentions: 320,
-          sentiment: 88
+          sentiment: 88,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Expand data center capacity",
-        "Implement advanced cooling systems",
-        "Upgrade power infrastructure"
+        "East Coast Innovation Center",
+        "Virginia Tech Corridor",
+        "Regional Data Hub Expansion"
       ],
       mediumCost: [
-        "Enhance security systems",
-        "Implement AI monitoring",
-        "Upgrade network infrastructure"
+        "DC Metro Area Tech Programs",
+        "East Coast Startup Hub",
+        "Regional Cloud Academy"
       ],
       lowCost: [
-        "Staff training programs",
-        "Energy efficiency optimization",
-        "Regular maintenance schedules"
+        "Local STEM Education",
+        "Community Tech Events",
+        "Regional Dev Programs"
       ]
     }
   },
@@ -57,33 +57,33 @@ export const northAmericaHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 980,
-          sentiment: 82
+          sentiment: 82,
         },
         linkedin: {
           mentions: 720,
-          sentiment: 88
+          sentiment: 88,
         },
         news: {
           mentions: 280,
-          sentiment: 85
+          sentiment: 85,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Renewable energy integration",
-        "Network backbone upgrade",
-        "Security infrastructure enhancement"
+        "Pacific Northwest Data Center",
+        "Oregon Innovation Hub",
+        "West Coast Cloud Center"
       ],
       mediumCost: [
-        "Cooling system optimization",
-        "Backup power systems",
-        "Staff facilities upgrade"
+        "Regional Tech Training",
+        "West Coast Startup Support",
+        "Green Tech Initiatives"
       ],
       lowCost: [
-        "Environmental monitoring",
-        "Energy usage optimization",
-        "Emergency response training"
+        "Local Community Programs",
+        "Pacific Dev Meetups",
+        "Regional STEM Support"
       ]
     }
   },
@@ -100,33 +100,33 @@ export const northAmericaHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 750,
-          sentiment: 84
+          sentiment: 84,
         },
         linkedin: {
           mentions: 580,
-          sentiment: 89
+          sentiment: 89,
         },
         news: {
           mentions: 220,
-          sentiment: 86
+          sentiment: 86,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Cold weather infrastructure",
-        "Network resilience systems",
-        "Power grid enhancement"
+        "Canadian Tech Innovation Hub",
+        "Ontario Data Center",
+        "National Cloud Infrastructure"
       ],
       mediumCost: [
-        "Heating system optimization",
-        "Security infrastructure",
-        "Staff comfort facilities"
+        "Canadian Tech Education",
+        "National Startup Support",
+        "Regional Research Center"
       ],
       lowCost: [
-        "Energy efficiency programs",
-        "Winter operation training",
-        "Local community engagement"
+        "Local Community Programs",
+        "Canadian Tech Events",
+        "Regional Dev Support"
       ]
     }
   }
