@@ -26,14 +26,30 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       zoom: 1.5,
       center: [0, 20],
       pitch: 45,
+      minZoom: 1,
+      maxZoom: 18,
+      dragRotate: true,
+      touchZoomRotate: true,
+      doubleClickZoom: true,
+      scrollZoom: {
+        speed: 2,
+        smooth: true
+      }
     });
 
     map.current.addControl(
       new mapboxgl.NavigationControl({
         visualizePitch: true,
+        showZoom: true,
+        showCompass: true
       }),
       'top-right'
     );
+
+    // Enable easy touch interaction for mobile devices
+    if (map.current.touchZoomRotate) {
+      map.current.touchZoomRotate.enable();
+    }
 
     map.current.on('style.load', () => {
       if (!map.current) return;
@@ -68,10 +84,10 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
         },
         paint: {
           'circle-radius': 8,
-          'circle-color': '#F97316', // Bright orange color
+          'circle-color': '#F97316',
           'circle-opacity': 0.8,
           'circle-stroke-width': 2,
-          'circle-stroke-color': '#FEC6A1', // Soft orange color for the stroke
+          'circle-stroke-color': '#FEC6A1',
           'circle-stroke-opacity': 0.3
         }
       });
@@ -93,17 +109,21 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       });
     });
 
-    // Handle hover states
+    // Enhanced hover states with smooth transitions
     map.current.on('mousemove', 'hotspots', (e) => {
       if (!map.current || !e.features?.[0]) return;
       
-      map.current.setFilter('hotspots-hover', [
-        '==',
-        'id',
-        e.features[0].properties.id
-      ]);
-      
       map.current.getCanvas().style.cursor = 'pointer';
+      map.current.setFilter('hotspots-hover', ['==', 'id', e.features[0].properties.id]);
+
+      // Smooth zoom to hovered location
+      const coordinates = e.features[0].geometry.coordinates.slice();
+      map.current.easeTo({
+        center: coordinates,
+        duration: 800,
+        zoom: Math.min(map.current.getZoom() + 0.5, 8),
+        easing: t => t * (2 - t) // Smooth easing function
+      });
     });
 
     map.current.on('mouseleave', 'hotspots', () => {
@@ -113,19 +133,28 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       map.current.getCanvas().style.cursor = '';
     });
 
-    // Handle click events
+    // Enhanced click interaction
     map.current.on('click', 'hotspots', (e) => {
       if (!e.features?.[0]) return;
       
       const id = e.features[0].properties.id;
       const hotspot = hotspots.find(h => h.id === id);
+      const coordinates = e.features[0].geometry.coordinates.slice();
       
       if (hotspot) {
+        // Smooth zoom to clicked location
+        map.current?.flyTo({
+          center: coordinates,
+          zoom: 6,
+          duration: 1500,
+          essential: true
+        });
+        
         onHotspotClick(hotspot);
       }
     });
 
-    // Auto-rotation
+    // Auto-rotation with smooth transitions
     const secondsPerRevolution = 240;
     let userInteracting = false;
     
@@ -134,7 +163,11 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       
       const center = map.current.getCenter();
       center.lng -= 360 / secondsPerRevolution;
-      map.current.easeTo({ center, duration: 1000, easing: (n) => n });
+      map.current.easeTo({ 
+        center, 
+        duration: 1000, 
+        easing: (t) => t * (2 - t) // Smooth easing function
+      });
     }
 
     map.current.on('mousedown', () => {
@@ -149,6 +182,7 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
     const interval = setInterval(spinGlobe, 1000);
 
     return () => {
+      clearInterval(interval);
       map.current?.remove();
     };
   }, [hotspots, onHotspotClick, mapboxToken]);
