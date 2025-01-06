@@ -68,10 +68,10 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
         },
         paint: {
           'circle-radius': 8,
-          'circle-color': '#fff',
+          'circle-color': '#F97316', // Bright orange color
           'circle-opacity': 0.8,
           'circle-stroke-width': 2,
-          'circle-stroke-color': '#fff',
+          'circle-stroke-color': '#FEC6A1', // Soft orange color for the stroke
           'circle-stroke-opacity': 0.3
         }
       });
@@ -83,10 +83,10 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
         source: 'hotspots',
         paint: {
           'circle-radius': 12,
-          'circle-color': '#fff',
+          'circle-color': '#F97316',
           'circle-opacity': 0,
           'circle-stroke-width': 2,
-          'circle-stroke-color': '#fff',
+          'circle-stroke-color': '#FEC6A1',
           'circle-stroke-opacity': 0
         },
         filter: ['==', 'id', '']
