@@ -3,146 +3,233 @@ import { Hotspot } from '../lib/types';
 export const hotspots: Hotspot[] = [
   {
     id: 1,
-    name: "Northern Australia Community",
-    coordinates: [131.0349, -12.4634],
+    name: "US East (N. Virginia)",
+    coordinates: [-77.0469, 38.8048],
     metrics: {
-      sentiment: 78,
-      articles: 156,
-      studentsEnrolled: 2450,
-      investmentToDate: 12500000,
-      futureRequirements: 8750000
+      sentiment: 92,
+      articles: 245,
+      studentsEnrolled: 5600,
+      investmentToDate: 25000000,
+      futureRequirements: 15000000
     },
     recommendations: {
       highCost: [
-        "Establish renewable energy infrastructure",
-        "Build new educational facilities",
-        "Develop water treatment plant"
+        "Expand data center capacity",
+        "Implement advanced cooling systems",
+        "Upgrade power infrastructure"
       ],
       mediumCost: [
-        "Implement vocational training programs",
-        "Create community health centers",
-        "Upgrade existing school facilities"
+        "Enhance security systems",
+        "Implement AI monitoring",
+        "Upgrade network infrastructure"
       ],
       lowCost: [
-        "Launch community engagement programs",
-        "Organize cultural preservation workshops",
-        "Start mentorship programs"
+        "Staff training programs",
+        "Energy efficiency optimization",
+        "Regular maintenance schedules"
       ]
     }
   },
   {
     id: 2,
-    name: "Amazon Basin Initiative",
-    coordinates: [-63.0548, -3.4653],
+    name: "US West (Oregon)",
+    coordinates: [-122.6784, 45.5155],
     metrics: {
-      sentiment: 82,
-      articles: 203,
+      sentiment: 88,
+      articles: 180,
       studentsEnrolled: 3200,
-      investmentToDate: 15800000,
+      investmentToDate: 18000000,
       futureRequirements: 12000000
     },
     recommendations: {
       highCost: [
-        "Build sustainable housing complexes",
-        "Install solar power grid",
-        "Construct medical facilities"
+        "Renewable energy integration",
+        "Network backbone upgrade",
+        "Security infrastructure enhancement"
       ],
       mediumCost: [
-        "Develop agricultural training centers",
-        "Create river transportation network",
-        "Establish waste management system"
+        "Cooling system optimization",
+        "Backup power systems",
+        "Staff facilities upgrade"
       ],
       lowCost: [
-        "Implement environmental education programs",
-        "Create local artisan support network",
-        "Develop eco-tourism initiatives"
+        "Environmental monitoring",
+        "Energy usage optimization",
+        "Emergency response training"
       ]
     }
   },
   {
     id: 3,
-    name: "Sahel Region Project",
-    coordinates: [1.6596, 14.4974],
+    name: "Europe (Ireland)",
+    coordinates: [-6.2603, 53.3498],
     metrics: {
-      sentiment: 65,
-      articles: 142,
-      studentsEnrolled: 1850,
-      investmentToDate: 9200000,
-      futureRequirements: 14500000
+      sentiment: 85,
+      articles: 165,
+      studentsEnrolled: 2800,
+      investmentToDate: 16000000,
+      futureRequirements: 11000000
     },
     recommendations: {
       highCost: [
-        "Implement large-scale irrigation systems",
-        "Build drought-resistant infrastructure",
-        "Develop renewable water sources"
+        "Sustainable power solutions",
+        "Network infrastructure expansion",
+        "Advanced security systems"
       ],
       mediumCost: [
-        "Create agricultural training facilities",
-        "Establish food storage systems",
-        "Develop local markets"
+        "Cooling efficiency improvements",
+        "Backup system upgrades",
+        "Staff training facilities"
       ],
       lowCost: [
-        "Train farmers in sustainable practices",
-        "Create community seed banks",
-        "Implement weather monitoring systems"
+        "Green energy initiatives",
+        "Local community engagement",
+        "Operational optimization"
       ]
     }
   },
   {
     id: 4,
-    name: "Arctic Indigenous Program",
-    coordinates: [-105.2551, 66.1605],
+    name: "Asia Pacific (Tokyo)",
+    coordinates: [139.6917, 35.6895],
     metrics: {
-      sentiment: 71,
-      articles: 98,
-      studentsEnrolled: 890,
-      investmentToDate: 7500000,
-      futureRequirements: 9800000
+      sentiment: 90,
+      articles: 210,
+      studentsEnrolled: 4200,
+      investmentToDate: 22000000,
+      futureRequirements: 14000000
     },
     recommendations: {
       highCost: [
-        "Build climate-controlled greenhouses",
-        "Develop renewable heating systems",
-        "Construct all-weather transportation"
+        "Earthquake protection systems",
+        "Power grid redundancy",
+        "Advanced cooling technology"
       ],
       mediumCost: [
-        "Create cultural preservation centers",
-        "Establish satellite internet infrastructure",
-        "Develop emergency response facilities"
+        "Network optimization",
+        "Security enhancement",
+        "Staff facility modernization"
       ],
       lowCost: [
-        "Document traditional knowledge",
-        "Create youth mentorship programs",
-        "Implement wildlife monitoring"
+        "Energy efficiency programs",
+        "Local talent development",
+        "Disaster response training"
       ]
     }
   },
   {
     id: 5,
-    name: "Himalayan Communities",
-    coordinates: [86.9250, 27.9881],
+    name: "Asia Pacific (Singapore)",
+    coordinates: [103.8198, 1.3521],
     metrics: {
-      sentiment: 88,
-      articles: 167,
-      studentsEnrolled: 1560,
-      investmentToDate: 11200000,
-      futureRequirements: 8900000
+      sentiment: 87,
+      articles: 175,
+      studentsEnrolled: 3100,
+      investmentToDate: 17000000,
+      futureRequirements: 10000000
     },
     recommendations: {
       highCost: [
-        "Build avalanche protection systems",
-        "Develop hydroelectric infrastructure",
-        "Create mountain rescue facilities"
+        "Cooling system modernization",
+        "Network infrastructure upgrade",
+        "Security system enhancement"
       ],
       mediumCost: [
-        "Establish mountain farming initiatives",
-        "Create textile production centers",
-        "Develop eco-tourism facilities"
+        "Power efficiency optimization",
+        "Staff facilities improvement",
+        "Backup systems upgrade"
       ],
       lowCost: [
-        "Train local guides",
-        "Create artisan cooperatives",
-        "Implement weather monitoring"
+        "Environmental monitoring",
+        "Staff training programs",
+        "Community engagement"
+      ]
+    }
+  },
+  {
+    id: 6,
+    name: "South America (São Paulo)",
+    coordinates: [-46.6333, -23.5505],
+    metrics: {
+      sentiment: 82,
+      articles: 145,
+      studentsEnrolled: 2400,
+      investmentToDate: 14000000,
+      futureRequirements: 9000000
+    },
+    recommendations: {
+      highCost: [
+        "Power infrastructure upgrade",
+        "Network backbone expansion",
+        "Security systems modernization"
+      ],
+      mediumCost: [
+        "Cooling efficiency improvement",
+        "Staff facility enhancement",
+        "Backup power systems"
+      ],
+      lowCost: [
+        "Local workforce training",
+        "Energy optimization",
+        "Community programs"
+      ]
+    }
+  },
+  {
+    id: 7,
+    name: "Canada (Central)",
+    coordinates: [-79.3832, 43.6532],
+    metrics: {
+      sentiment: 86,
+      articles: 155,
+      studentsEnrolled: 2600,
+      investmentToDate: 15000000,
+      futureRequirements: 9500000
+    },
+    recommendations: {
+      highCost: [
+        "Cold weather infrastructure",
+        "Network resilience systems",
+        "Power grid enhancement"
+      ],
+      mediumCost: [
+        "Heating system optimization",
+        "Security infrastructure",
+        "Staff comfort facilities"
+      ],
+      lowCost: [
+        "Energy efficiency programs",
+        "Winter operation training",
+        "Local community engagement"
+      ]
+    }
+  },
+  {
+    id: 8,
+    name: "Middle East (Bahrain)",
+    coordinates: [50.5875, 26.2167],
+    metrics: {
+      sentiment: 83,
+      articles: 130,
+      studentsEnrolled: 2000,
+      investmentToDate: 13000000,
+      futureRequirements: 8500000
+    },
+    recommendations: {
+      highCost: [
+        "Advanced cooling systems",
+        "Power infrastructure upgrade",
+        "Network backbone enhancement"
+      ],
+      mediumCost: [
+        "Security system modernization",
+        "Staff facility improvement",
+        "Backup power solutions"
+      ],
+      lowCost: [
+        "Energy efficiency programs",
+        "Local talent development",
+        "Environmental monitoring"
       ]
     }
   }
