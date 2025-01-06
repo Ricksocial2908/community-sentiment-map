@@ -154,35 +154,7 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       }
     });
 
-    // Auto-rotation with smooth transitions
-    const secondsPerRevolution = 240;
-    let userInteracting = false;
-    
-    function spinGlobe() {
-      if (!map.current || userInteracting) return;
-      
-      const center = map.current.getCenter();
-      center.lng -= 360 / secondsPerRevolution;
-      map.current.easeTo({ 
-        center, 
-        duration: 1000, 
-        easing: (t) => t * (2 - t) // Smooth easing function
-      });
-    }
-
-    map.current.on('mousedown', () => {
-      userInteracting = true;
-    });
-    
-    map.current.on('mouseup', () => {
-      userInteracting = false;
-      spinGlobe();
-    });
-    
-    const interval = setInterval(spinGlobe, 1000);
-
     return () => {
-      clearInterval(interval);
       map.current?.remove();
     };
   }, [hotspots, onHotspotClick, mapboxToken]);
