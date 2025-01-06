@@ -1,12 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { WorldMap } from "@/components/WorldMap";
+import { DataPanel } from "@/components/DataPanel";
+import { hotspots } from "@/data/hotspots";
+import { Hotspot } from "@/lib/types";
 
 const Index = () => {
+  const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
+  const [isPanelVisible, setIsPanelVisible] = useState(false);
+
+  const handleHotspotClick = (hotspot: Hotspot) => {
+    setSelectedHotspot(hotspot);
+    setIsPanelVisible(true);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="relative w-full h-screen bg-gray-900">
+      <WorldMap 
+        hotspots={hotspots} 
+        onHotspotClick={handleHotspotClick} 
+      />
+      <DataPanel 
+        hotspot={selectedHotspot} 
+        isVisible={isPanelVisible} 
+      />
     </div>
   );
 };
