@@ -9,17 +9,26 @@ interface MetricsCardProps {
 }
 
 export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps) => {
-  // Get detailed information based on the metric label
   const getDetailedInfo = (label: string) => {
     switch (label) {
       case "Community Sentiment":
         return {
           sources: ["Twitter Analysis", "LinkedIn Engagement", "Community Forums"],
           breakdown: [
-            { source: "Social Media", value: "78%" },
-            { source: "Direct Feedback", value: "92%" },
-            { source: "Forum Activity", value: "85%" }
+            { source: "Social Media", value: "78%", sentiment: { positive: "82%", negative: "18%" } },
+            { source: "Direct Feedback", value: "92%", sentiment: { positive: "95%", negative: "5%" } },
+            { source: "Forum Activity", value: "85%", sentiment: { positive: "88%", negative: "12%" } }
           ],
+          sentimentAnalysis: {
+            positive: {
+              percentage: "88%",
+              topTopics: ["Community Programs", "STEM Education", "Job Creation", "Environmental Initiatives"]
+            },
+            negative: {
+              percentage: "12%",
+              topTopics: ["Traffic Concerns", "Construction Noise", "Parking"]
+            }
+          },
           lastUpdated: "2024-03-15"
         };
       case "Articles Published":
@@ -98,13 +107,66 @@ export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps
                 ))}
               </ul>
             </div>
+            {'sentimentAnalysis' in detailedInfo && (
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300">Sentiment Analysis:</h4>
+                <div className="mt-2 space-y-2">
+                  <div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-green-400">Positive: {detailedInfo.sentimentAnalysis.positive.percentage}</span>
+                      <span className="text-red-400">Negative: {detailedInfo.sentimentAnalysis.negative.percentage}</span>
+                    </div>
+                    <div className="mt-1 bg-gray-700 h-2 rounded-full">
+                      <div 
+                        className="bg-green-500 h-full rounded-l-full"
+                        style={{ width: detailedInfo.sentimentAnalysis.positive.percentage }}
+                      />
+                    </div>
+                  </div>
+                  <div className="text-xs">
+                    <p className="text-gray-300 font-semibold mt-1">Top Positive Topics:</p>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {detailedInfo.sentimentAnalysis.positive.topTopics.map((topic, index) => (
+                        <span key={index} className="px-2 py-1 rounded-full bg-green-500/20 text-green-300">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 font-semibold mt-2">Top Concerns:</p>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {detailedInfo.sentimentAnalysis.negative.topTopics.map((topic, index) => (
+                        <span key={index} className="px-2 py-1 rounded-full bg-red-500/20 text-red-300">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div>
               <h4 className="text-sm font-semibold text-gray-300">Breakdown:</h4>
               <ul className="mt-1 space-y-1">
                 {detailedInfo.breakdown.map((item, index) => (
-                  <li key={index} className="flex justify-between text-xs">
-                    <span className="text-gray-400">{item.source}</span>
-                    <span className="text-gray-300">{item.value}</span>
+                  <li key={index} className="text-xs">
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">{item.source}</span>
+                      <span className="text-gray-300">{item.value}</span>
+                    </div>
+                    {'sentiment' in item && (
+                      <div className="mt-1">
+                        <div className="flex justify-between text-xs">
+                          <span className="text-green-400">+{item.sentiment.positive}</span>
+                          <span className="text-red-400">-{item.sentiment.negative}</span>
+                        </div>
+                        <div className="mt-1 bg-gray-700 h-1 rounded-full">
+                          <div 
+                            className="bg-green-500 h-full rounded-l-full"
+                            style={{ width: item.sentiment.positive }}
+                          />
+                        </div>
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>

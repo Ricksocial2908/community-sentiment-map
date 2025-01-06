@@ -86,5 +86,91 @@ export const otherHotspots: Hotspot[] = [
         "Environmental monitoring"
       ]
     }
+  },
+  {
+    id: 9,
+    name: "Africa (Cape Town)",
+    coordinates: [18.4241, -33.9249],
+    metrics: {
+      sentiment: 85,
+      articles: 120,
+      studentsEnrolled: 1800,
+      investmentToDate: 11000000,
+      futureRequirements: 7500000,
+      socialMetrics: {
+        twitter: {
+          mentions: 550,
+          sentiment: 84
+        },
+        linkedin: {
+          mentions: 420,
+          sentiment: 86
+        },
+        news: {
+          mentions: 150,
+          sentiment: 85
+        }
+      }
+    },
+    recommendations: {
+      highCost: [
+        "Renewable energy systems",
+        "Network infrastructure",
+        "Security enhancement"
+      ],
+      mediumCost: [
+        "Cooling optimization",
+        "Staff training center",
+        "Backup systems"
+      ],
+      lowCost: [
+        "Community education",
+        "Local hiring initiatives",
+        "Environmental programs"
+      ]
+    }
+  },
+  {
+    id: 10,
+    name: "India (Mumbai)",
+    coordinates: [72.8777, 19.0760],
+    metrics: {
+      sentiment: 87,
+      articles: 160,
+      studentsEnrolled: 3500,
+      investmentToDate: 16000000,
+      futureRequirements: 10000000,
+      socialMetrics: {
+        twitter: {
+          mentions: 780,
+          sentiment: 86
+        },
+        linkedin: {
+          mentions: 650,
+          sentiment: 88
+        },
+        news: {
+          mentions: 230,
+          sentiment: 87
+        }
+      }
+    },
+    recommendations: {
+      highCost: [
+        "Data center expansion",
+        "Power grid enhancement",
+        "Network infrastructure"
+      ],
+      mediumCost: [
+        "Cooling systems upgrade",
+        "Security modernization",
+        "Staff facilities"
+      ],
+      lowCost: [
+        "Skills development",
+        "Community outreach",
+        "Energy efficiency"
+      ]
+    }
   }
 ];
