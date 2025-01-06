@@ -88,3 +88,39 @@ export const asiaPacificHotspots: Hotspot[] = [
     }
   }
 ];
+
+// Add a type to ensure type safety for the detailed info
+export const getSingaporeDetailedInfo = (label: string) => {
+  switch (label) {
+    case "Community Sentiment":
+      return {
+        sources: [
+          "The Straits Times",
+          "Channel NewsAsia",
+          "Today Online",
+          "Business Times Singapore",
+          "HardwareZone Forums",
+          "Singapore Tech Community Forum",
+          "Serangoon Road Business Association"
+        ],
+        breakdown: [
+          { source: "Local Media Coverage", value: "78%", sentiment: { positive: "82%", negative: "18%" } },
+          { source: "Community Feedback", value: "92%", sentiment: { positive: "95%", negative: "5%" } },
+          { source: "Forum Discussions", value: "85%", sentiment: { positive: "88%", negative: "12%" } }
+        ],
+        sentimentAnalysis: {
+          positive: {
+            percentage: "88%",
+            topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
+          },
+          negative: {
+            percentage: "12%",
+            topTopics: ["Data Center Construction", "Infrastructure Timeline", "Local Traffic"]
+          }
+        },
+        lastUpdated: "2024-03-15"
+      };
+    default:
+      return null;
+  }
+};

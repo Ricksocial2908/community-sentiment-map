@@ -1,16 +1,22 @@
 import { cn } from "@/lib/utils";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { DetailedInfo } from "./metrics/DetailedInfo";
+import { getSingaporeDetailedInfo } from "@/data/regions/asiaPacific";
 
 interface MetricsCardProps {
   label: string;
   value: string | number;
   trend?: "up" | "down";
   className?: string;
+  location?: string;
 }
 
-export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps) => {
+export const MetricsCard = ({ label, value, trend, className, location }: MetricsCardProps) => {
   const getDetailedInfo = (label: string) => {
+    if (location === "Asia Pacific (Singapore)") {
+      return getSingaporeDetailedInfo(label);
+    }
+
     switch (label) {
       case "Community Sentiment":
         return {
