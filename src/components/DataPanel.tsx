@@ -15,7 +15,7 @@ export const DataPanel = ({ hotspot, isVisible }: DataPanelProps) => {
 
   return (
     <div className={`
-      fixed right-0 top-0 h-full w-[600px] bg-gray-900/95 backdrop-blur-xl
+      fixed right-0 top-0 h-full w-1/2 bg-gray-900/95 backdrop-blur-xl
       transform transition-transform duration-500 ease-in-out
       border-l border-white/10 overflow-y-auto
       ${isVisible ? 'translate-x-0' : 'translate-x-full'}
