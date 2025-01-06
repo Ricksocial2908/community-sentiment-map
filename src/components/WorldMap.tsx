@@ -20,7 +20,7 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
   });
 
   return (
-    <div className="relative w-full h-[25vh]">
+    <div className="relative w-full h-screen">
       <div ref={mapContainer} className="absolute inset-0" />
       <MapOverlay />
     </div>

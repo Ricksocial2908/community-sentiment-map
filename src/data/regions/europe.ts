@@ -14,34 +14,69 @@ export const europeHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 820,
-          sentiment: 83
+          sentiment: 83,
         },
         linkedin: {
           mentions: 640,
-          sentiment: 87
+          sentiment: 87,
         },
         news: {
           mentions: 250,
-          sentiment: 84
+          sentiment: 84,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Sustainable power solutions",
-        "Network infrastructure expansion",
-        "Advanced security systems"
+        "European Green Data Center",
+        "EU Cloud Innovation Hub",
+        "Regional Tech Campus"
       ],
       mediumCost: [
-        "Cooling efficiency improvements",
-        "Backup system upgrades",
-        "Staff training facilities"
+        "EU Tech Skills Program",
+        "European Startup Support",
+        "Regional Research Center"
       ],
       lowCost: [
-        "Green energy initiatives",
-        "Local community engagement",
-        "Operational optimization"
+        "Local Community Engagement",
+        "EU Tech Conferences",
+        "Regional Dev Meetups"
       ]
     }
   }
 ];
+
+export const getIrelandDetailedInfo = (label: string) => {
+  switch (label) {
+    case "Community Sentiment":
+      return {
+        sources: [
+          "The Irish Times",
+          "Irish Independent",
+          "Dublin Business Post",
+          "Irish Tech News",
+          "Dublin Chamber of Commerce",
+          "Irish Tech Community",
+          "Dublin Tech Forum"
+        ],
+        breakdown: [
+          { source: "Local Media Coverage", value: "85%", sentiment: { positive: "88%", negative: "12%" } },
+          { source: "Community Feedback", value: "89%", sentiment: { positive: "91%", negative: "9%" } },
+          { source: "Forum Discussions", value: "87%", sentiment: { positive: "89%", negative: "11%" } }
+        ],
+        sentimentAnalysis: {
+          positive: {
+            percentage: "89%",
+            topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
+          },
+          negative: {
+            percentage: "11%",
+            topTopics: ["Data Center Energy Usage", "Infrastructure Timeline", "Local Planning"]
+          }
+        },
+        lastUpdated: "2024-03-15"
+      };
+    default:
+      return null;
+  }
+};

@@ -14,33 +14,33 @@ export const otherHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 680,
-          sentiment: 81
+          sentiment: 81,
         },
         linkedin: {
           mentions: 520,
-          sentiment: 84
+          sentiment: 84,
         },
         news: {
           mentions: 190,
-          sentiment: 82
+          sentiment: 82,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Power infrastructure upgrade",
-        "Network backbone expansion",
-        "Security systems modernization"
+        "Expand São Paulo Tech Hub",
+        "Sustainable Energy Infrastructure",
+        "Local Data Center Expansion"
       ],
       mediumCost: [
-        "Cooling efficiency improvement",
-        "Staff facility enhancement",
-        "Backup power systems"
+        "Brazilian Tech Education Programs",
+        "LATAM Startup Incubator",
+        "Regional Cloud Training Center"
       ],
       lowCost: [
-        "Local workforce training",
-        "Energy optimization",
-        "Community programs"
+        "Portuguese Language Resources",
+        "Local Tech Community Events",
+        "South American Dev Meetups"
       ]
     }
   },
@@ -57,33 +57,33 @@ export const otherHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 620,
-          sentiment: 82
+          sentiment: 82,
         },
         linkedin: {
           mentions: 480,
-          sentiment: 85
+          sentiment: 85,
         },
         news: {
           mentions: 170,
-          sentiment: 83
+          sentiment: 83,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Advanced cooling systems",
-        "Power infrastructure upgrade",
-        "Network backbone enhancement"
+        "Gulf Region Data Center Expansion",
+        "Middle East Cloud Academy",
+        "Regional Innovation Hub"
       ],
       mediumCost: [
-        "Security system modernization",
-        "Staff facility improvement",
-        "Backup power solutions"
+        "Arabic Tech Resources Development",
+        "Islamic Finance Tech Solutions",
+        "Regional Talent Development"
       ],
       lowCost: [
-        "Energy efficiency programs",
-        "Local talent development",
-        "Environmental monitoring"
+        "Local Tech Community Support",
+        "Gulf Tech Conferences",
+        "Middle Eastern Dev Programs"
       ]
     }
   },
@@ -100,33 +100,33 @@ export const otherHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 550,
-          sentiment: 84
+          sentiment: 84,
         },
         linkedin: {
           mentions: 420,
-          sentiment: 86
+          sentiment: 86,
         },
         news: {
           mentions: 150,
-          sentiment: 85
+          sentiment: 85,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Renewable energy systems",
-        "Network infrastructure",
-        "Security enhancement"
+        "African Tech Hub Development",
+        "Solar-Powered Infrastructure",
+        "Pan-African Data Center Network"
       ],
       mediumCost: [
-        "Cooling optimization",
-        "Staff training center",
-        "Backup systems"
+        "African Languages Support",
+        "Local Tech Skills Program",
+        "Regional Cloud Training"
       ],
       lowCost: [
-        "Community education",
-        "Local hiring initiatives",
-        "Environmental programs"
+        "Community Tech Workshops",
+        "African Dev Community Events",
+        "Local STEM Education Support"
       ]
     }
   },
@@ -143,33 +143,33 @@ export const otherHotspots: Hotspot[] = [
       socialMetrics: {
         twitter: {
           mentions: 780,
-          sentiment: 86
+          sentiment: 86,
         },
         linkedin: {
           mentions: 650,
-          sentiment: 88
+          sentiment: 88,
         },
         news: {
           mentions: 230,
-          sentiment: 87
+          sentiment: 87,
         }
       }
     },
     recommendations: {
       highCost: [
-        "Data center expansion",
-        "Power grid enhancement",
-        "Network infrastructure"
+        "Mumbai Tech Campus Expansion",
+        "Indian Innovation Center",
+        "South Asia Data Hub"
       ],
       mediumCost: [
-        "Cooling systems upgrade",
-        "Security modernization",
-        "Staff facilities"
+        "Indian Languages Tech Support",
+        "Regional Startup Accelerator",
+        "Local Tech Education Programs"
       ],
       lowCost: [
-        "Skills development",
-        "Community outreach",
-        "Energy efficiency"
+        "Indian Dev Community Support",
+        "Local Tech Meetups",
+        "Regional STEM Initiatives"
       ]
     }
   }
