@@ -13,11 +13,50 @@ export const DataPanel = ({ hotspot, isVisible }: DataPanelProps) => {
   const getLocationSpecificProjects = (location: string) => {
     const projectsByLocation = {
       "US East (N. Virginia)": [
-        { category: "Think Big Space Program", amount: hotspot.metrics.investmentToDate * 0.3, description: "Educational space exploration center" },
-        { category: "Local STEM Initiatives", amount: hotspot.metrics.investmentToDate * 0.25, description: "Supporting K-12 STEM programs" },
-        { category: "District Heating Project", amount: hotspot.metrics.investmentToDate * 0.2, description: "Sustainable heating infrastructure" },
-        { category: "Community Tech Hub", amount: hotspot.metrics.investmentToDate * 0.15, description: "Public access technology center" },
-        { category: "Digital Literacy Programs", amount: hotspot.metrics.investmentToDate * 0.1, description: "Adult education initiatives" }
+        { 
+          category: "STEM Initiatives", 
+          amount: hotspot.metrics.investmentToDate * 0.25,
+          description: "Supporting K-12 STEM programs",
+          subProjects: [
+            "AWS Think Big Space Program - $2.5M",
+            "Local School Robotics Clubs - $1.2M",
+            "Code.org Partnership - $800K",
+            "Science Fair Sponsorships - $500K"
+          ]
+        },
+        { 
+          category: "Local Community Projects", 
+          amount: hotspot.metrics.investmentToDate * 0.25,
+          description: "Community development initiatives",
+          subProjects: [
+            "Digital Literacy Programs - $2M",
+            "Community Tech Hub - $1.5M",
+            "Public Library Tech Updates - $1M",
+            "Senior Digital Skills Program - $500K"
+          ]
+        },
+        { 
+          category: "Sports Facilities", 
+          amount: hotspot.metrics.investmentToDate * 0.2,
+          description: "Sports and recreation support",
+          subProjects: [
+            "AWS Park Run Series - $1.5M",
+            "Youth Sports Programs - $1M",
+            "Community Sports Center - $1.5M",
+            "School Athletics Support - $1M"
+          ]
+        },
+        { 
+          category: "Charitable Donations", 
+          amount: hotspot.metrics.investmentToDate * 0.3,
+          description: "Supporting local charities",
+          subProjects: [
+            "Food Bank Technology - $2M",
+            "Healthcare Initiative - $1.5M",
+            "Emergency Services Support - $1.5M",
+            "Environmental Programs - $1M"
+          ]
+        }
       ],
       "US West (Oregon)": [
         { category: "Renewable Energy Initiative", amount: hotspot.metrics.investmentToDate * 0.35, description: "Solar and wind power projects" },
@@ -40,10 +79,50 @@ export const DataPanel = ({ hotspot, isVisible }: DataPanelProps) => {
     };
 
     return projectsByLocation[location as keyof typeof projectsByLocation] || [
-      { category: "Technology Education", amount: hotspot.metrics.investmentToDate * 0.3, description: "Local learning programs" },
-      { category: "Community Infrastructure", amount: hotspot.metrics.investmentToDate * 0.3, description: "Digital access improvements" },
-      { category: "Sustainability Projects", amount: hotspot.metrics.investmentToDate * 0.2, description: "Environmental initiatives" },
-      { category: "Innovation Support", amount: hotspot.metrics.investmentToDate * 0.2, description: "Local tech development" }
+      { 
+        category: "STEM Initiatives", 
+        amount: hotspot.metrics.investmentToDate * 0.25,
+        description: "Supporting K-12 STEM programs",
+        subProjects: [
+          "Local School Programs",
+          "Coding Bootcamps",
+          "Teacher Training",
+          "Educational Resources"
+        ]
+      },
+      { 
+        category: "Local Community Projects", 
+        amount: hotspot.metrics.investmentToDate * 0.25,
+        description: "Community development initiatives",
+        subProjects: [
+          "Digital Access Programs",
+          "Community Centers",
+          "Skills Training",
+          "Infrastructure Support"
+        ]
+      },
+      { 
+        category: "Sports Facilities", 
+        amount: hotspot.metrics.investmentToDate * 0.2,
+        description: "Sports and recreation support",
+        subProjects: [
+          "Sports Programs",
+          "Facility Maintenance",
+          "Youth Athletics",
+          "Community Events"
+        ]
+      },
+      { 
+        category: "Charitable Donations", 
+        amount: hotspot.metrics.investmentToDate * 0.3,
+        description: "Supporting local charities",
+        subProjects: [
+          "Local Initiatives",
+          "Healthcare Support",
+          "Emergency Services",
+          "Environmental Programs"
+        ]
+      }
     ];
   };
 
@@ -85,15 +164,24 @@ export const DataPanel = ({ hotspot, isVisible }: DataPanelProps) => {
             {investmentBreakdown.map((item, index) => (
               <div key={index} className="bg-white/5 rounded-lg p-4 backdrop-blur-sm border border-white/10">
                 <div className="flex justify-between items-center mb-1">
-                  <div>
-                    <span className="text-gray-300">{item.category}</span>
+                  <div className="space-y-2 w-full">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">{item.category}</span>
+                      <span className="text-white font-semibold">
+                        ${(item.amount / 1000000).toFixed(1)}M
+                      </span>
+                    </div>
                     <p className="text-sm text-gray-400">{item.description}</p>
+                    <div className="mt-2 space-y-1">
+                      {item.subProjects.map((subProject, idx) => (
+                        <div key={idx} className="text-sm text-gray-400 pl-4 border-l border-gray-700">
+                          {subProject}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <span className="text-white font-semibold">
-                    ${(item.amount / 1000000).toFixed(1)}M
-                  </span>
                 </div>
-                <div className="mt-2 bg-gray-700 h-2 rounded-full">
+                <div className="mt-4 bg-gray-700 h-2 rounded-full">
                   <div 
                     className="bg-blue-500 h-full rounded-full"
                     style={{ width: `${(item.amount / hotspot.metrics.investmentToDate) * 100}%` }}
