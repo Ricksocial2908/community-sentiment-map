@@ -23,11 +23,11 @@ export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps
           sentimentAnalysis: {
             positive: {
               percentage: "88%",
-              topTopics: ["Local Job Creation", "Community Programs", "Environmental Impact", "Skills Development"]
+              topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
             },
             negative: {
               percentage: "12%",
-              topTopics: ["Infrastructure Impact", "Construction Timeline", "Local Traffic"]
+              topTopics: ["Data Center Construction", "Infrastructure Timeline", "Local Traffic"]
             }
           },
           lastUpdated: "2024-03-15"
@@ -40,29 +40,37 @@ export const MetricsCard = ({ label, value, trend, className }: MetricsCardProps
             { source: "Regional Reports", value: "73" },
             { source: "Community Updates", value: "47" }
           ],
-          popularHashtags: ["#LocalTech", "#CommunityGrowth", "#RegionalDevelopment", "#LocalJobs", "#Sustainability"],
+          popularHashtags: [
+            "#AWSinCommunity",
+            "#AWSDataCenter",
+            "#AWSJobs",
+            "#AWSImpact",
+            "#AWSSustainability",
+            "#AWSEducation",
+            "#AWSLocalGrowth"
+          ],
           recentArticles: [
-            { title: "Local Community Benefits from Tech Investment", date: "2024-03-10" },
-            { title: "Regional Economic Impact Study Results", date: "2024-03-08" },
-            { title: "Community Skills Development Program Launch", date: "2024-03-05" }
+            { title: "AWS Data Center Boosts Local Economy", date: "2024-03-10" },
+            { title: "AWS Community Programs Expand", date: "2024-03-08" },
+            { title: "AWS Skills Development Initiative Launch", date: "2024-03-05" }
           ],
           lastUpdated: "2024-03-14"
         };
       case "Students in Programs":
         return {
-          sources: ["Local Universities", "Community Colleges", "Technical Schools"],
+          sources: ["AWS re/Start Programs", "AWS Academy Partners", "AWS Technical Training"],
           breakdown: [
-            { source: "Local Universities", value: "1,200" },
-            { source: "Technical Programs", value: "800" },
-            { source: "Community Training", value: "800" }
+            { source: "AWS re/Start", value: "1,200" },
+            { source: "AWS Academy", value: "800" },
+            { source: "AWS Training", value: "800" }
           ],
           lastUpdated: "2024-03-13"
         };
       case "Investment to Date":
         return {
-          sources: ["Local Development Records", "Regional Investment Data", "Community Projects"],
+          sources: ["AWS Infrastructure Records", "AWS Community Investment", "AWS Regional Projects"],
           breakdown: [
-            { source: "Infrastructure", value: "$8.5M" },
+            { source: "Data Center Infrastructure", value: "$8.5M" },
             { source: "Community Programs", value: "$4.2M" },
             { source: "Skills Development", value: "$3.3M" }
           ],
