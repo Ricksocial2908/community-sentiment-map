@@ -21,7 +21,7 @@ export const useMapbox = ({ container, hotspots, onHotspotClick, mapboxToken }: 
     map.current = new mapboxgl.Map({
       container: container.current,
       style: 'mapbox://styles/mapbox/dark-v11',
-      projection: 'mercator',
+      projection: 'globe',
       zoom: 1.5,
       center: [0, 20],
       pitch: 45,
