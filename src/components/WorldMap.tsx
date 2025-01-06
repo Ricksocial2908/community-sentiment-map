@@ -32,7 +32,7 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       touchZoomRotate: true,
       doubleClickZoom: true,
       scrollZoom: {
-        speed: 2,
+        around: 'center',
         smooth: true
       }
     });
@@ -117,9 +117,10 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       map.current.setFilter('hotspots-hover', ['==', 'id', e.features[0].properties.id]);
 
       // Smooth zoom to hovered location
-      const coordinates = e.features[0].geometry.coordinates.slice();
+      const feature = e.features[0];
+      const coords = (feature.geometry as any).coordinates;
       map.current.easeTo({
-        center: coordinates,
+        center: coords,
         duration: 800,
         zoom: Math.min(map.current.getZoom() + 0.5, 8),
         easing: t => t * (2 - t) // Smooth easing function
@@ -139,12 +140,12 @@ export const WorldMap = ({ hotspots, onHotspotClick, mapboxToken }: WorldMapProp
       
       const id = e.features[0].properties.id;
       const hotspot = hotspots.find(h => h.id === id);
-      const coordinates = e.features[0].geometry.coordinates.slice();
+      const coords = (e.features[0].geometry as any).coordinates;
       
       if (hotspot) {
         // Smooth zoom to clicked location
         map.current?.flyTo({
-          center: coordinates,
+          center: coords,
           zoom: 6,
           duration: 1500,
           essential: true
