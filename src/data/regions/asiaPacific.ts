@@ -89,7 +89,41 @@ export const asiaPacificHotspots: Hotspot[] = [
   }
 ];
 
-// Add a type to ensure type safety for the detailed info
+export const getTokyoDetailedInfo = (label: string) => {
+  switch (label) {
+    case "Community Sentiment":
+      return {
+        sources: [
+          "The Nikkei",
+          "The Japan Times",
+          "Asahi Shimbun",
+          "Yomiuri Shimbun",
+          "Tokyo Tech Forum",
+          "Japan Cloud Computing Association",
+          "Minato Business Association"
+        ],
+        breakdown: [
+          { source: "Local Media Coverage", value: "82%", sentiment: { positive: "85%", negative: "15%" } },
+          { source: "Community Feedback", value: "90%", sentiment: { positive: "92%", negative: "8%" } },
+          { source: "Forum Discussions", value: "88%", sentiment: { positive: "90%", negative: "10%" } }
+        ],
+        sentimentAnalysis: {
+          positive: {
+            percentage: "89%",
+            topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
+          },
+          negative: {
+            percentage: "11%",
+            topTopics: ["Data Center Construction", "Infrastructure Timeline", "Urban Development"]
+          }
+        },
+        lastUpdated: "2024-03-15"
+      };
+    default:
+      return null;
+  }
+};
+
 export const getSingaporeDetailedInfo = (label: string) => {
   switch (label) {
     case "Community Sentiment":

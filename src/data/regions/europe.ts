@@ -45,3 +45,38 @@ export const europeHotspots: Hotspot[] = [
     }
   }
 ];
+
+export const getIrelandDetailedInfo = (label: string) => {
+  switch (label) {
+    case "Community Sentiment":
+      return {
+        sources: [
+          "The Irish Times",
+          "Irish Independent",
+          "Dublin Business Post",
+          "Irish Tech News",
+          "Dublin Chamber of Commerce",
+          "Irish Tech Community",
+          "Dublin Tech Forum"
+        ],
+        breakdown: [
+          { source: "Local Media Coverage", value: "85%", sentiment: { positive: "88%", negative: "12%" } },
+          { source: "Community Feedback", value: "89%", sentiment: { positive: "91%", negative: "9%" } },
+          { source: "Forum Discussions", value: "87%", sentiment: { positive: "89%", negative: "11%" } }
+        ],
+        sentimentAnalysis: {
+          positive: {
+            percentage: "89%",
+            topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
+          },
+          negative: {
+            percentage: "11%",
+            topTopics: ["Data Center Energy Usage", "Infrastructure Timeline", "Local Planning"]
+          }
+        },
+        lastUpdated: "2024-03-15"
+      };
+    default:
+      return null;
+  }
+};

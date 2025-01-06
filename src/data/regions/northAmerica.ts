@@ -131,3 +131,73 @@ export const northAmericaHotspots: Hotspot[] = [
     }
   }
 ];
+
+export const getVirginiaDetailedInfo = (label: string) => {
+  switch (label) {
+    case "Community Sentiment":
+      return {
+        sources: [
+          "The Washington Post",
+          "Virginia Business",
+          "Inside NoVA",
+          "Washington Business Journal",
+          "Northern Virginia Technology Council",
+          "Dulles Tech Forum",
+          "Loudoun County Business Alliance"
+        ],
+        breakdown: [
+          { source: "Local Media Coverage", value: "88%", sentiment: { positive: "90%", negative: "10%" } },
+          { source: "Community Feedback", value: "92%", sentiment: { positive: "94%", negative: "6%" } },
+          { source: "Forum Discussions", value: "89%", sentiment: { positive: "91%", negative: "9%" } }
+        ],
+        sentimentAnalysis: {
+          positive: {
+            percentage: "92%",
+            topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
+          },
+          negative: {
+            percentage: "8%",
+            topTopics: ["Data Center Expansion", "Infrastructure Timeline", "Power Grid Impact"]
+          }
+        },
+        lastUpdated: "2024-03-15"
+      };
+    default:
+      return null;
+  }
+};
+
+export const getOregonDetailedInfo = (label: string) => {
+  switch (label) {
+    case "Community Sentiment":
+      return {
+        sources: [
+          "The Oregonian",
+          "Portland Business Journal",
+          "Oregon Business",
+          "Willamette Week",
+          "Technology Association of Oregon",
+          "Portland Tech Forum",
+          "Silicon Forest Community"
+        ],
+        breakdown: [
+          { source: "Local Media Coverage", value: "86%", sentiment: { positive: "88%", negative: "12%" } },
+          { source: "Community Feedback", value: "90%", sentiment: { positive: "92%", negative: "8%" } },
+          { source: "Forum Discussions", value: "88%", sentiment: { positive: "90%", negative: "10%" } }
+        ],
+        sentimentAnalysis: {
+          positive: {
+            percentage: "90%",
+            topTopics: ["AWS Data Center Jobs", "AWS Community Programs", "AWS Environmental Impact", "AWS Skills Development"]
+          },
+          negative: {
+            percentage: "10%",
+            topTopics: ["Data Center Water Usage", "Infrastructure Timeline", "Environmental Impact"]
+          }
+        },
+        lastUpdated: "2024-03-15"
+      };
+    default:
+      return null;
+  }
+};
