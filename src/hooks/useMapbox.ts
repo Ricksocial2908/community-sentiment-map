@@ -65,8 +65,9 @@ export const useMapbox = ({ container, hotspots, onHotspotClick, mapboxToken }: 
     const initializeHotspots = () => {
       if (!map.current) return;
 
+      // Add a larger glow effect layer
       map.current.addLayer({
-        id: 'hotspots',
+        id: 'hotspots-glow',
         type: 'circle',
         source: {
           type: 'geojson',
@@ -86,24 +87,38 @@ export const useMapbox = ({ container, hotspots, onHotspotClick, mapboxToken }: 
           }
         },
         paint: {
-          'circle-radius': 8,
+          'circle-radius': 20,
           'circle-color': '#F97316',
-          'circle-opacity': 0.8,
-          'circle-stroke-width': 2,
-          'circle-stroke-color': '#FEC6A1',
-          'circle-stroke-opacity': 0.3
+          'circle-opacity': 0.2,
+          'circle-blur': 1
         }
       });
 
+      // Main hotspot layer
       map.current.addLayer({
-        id: 'hotspots-hover',
+        id: 'hotspots',
         type: 'circle',
-        source: 'hotspots',
+        source: 'hotspots-glow',
         paint: {
           'circle-radius': 12,
           'circle-color': '#F97316',
+          'circle-opacity': 0.8,
+          'circle-stroke-width': 3,
+          'circle-stroke-color': '#FEC6A1',
+          'circle-stroke-opacity': 0.6
+        }
+      });
+
+      // Hover effect layer
+      map.current.addLayer({
+        id: 'hotspots-hover',
+        type: 'circle',
+        source: 'hotspots-glow',
+        paint: {
+          'circle-radius': 16,
+          'circle-color': '#F97316',
           'circle-opacity': 0,
-          'circle-stroke-width': 2,
+          'circle-stroke-width': 3,
           'circle-stroke-color': '#FEC6A1',
           'circle-stroke-opacity': 0
         },
