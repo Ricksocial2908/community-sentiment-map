@@ -59,22 +59,142 @@ export const DataPanel = ({ hotspot, isVisible }: DataPanelProps) => {
         }
       ],
       "US West (Oregon)": [
-        { category: "Renewable Energy Initiative", amount: hotspot.metrics.investmentToDate * 0.35, description: "Solar and wind power projects" },
-        { category: "Forest Conservation", amount: hotspot.metrics.investmentToDate * 0.25, description: "Local ecosystem protection" },
-        { category: "Tech Apprenticeships", amount: hotspot.metrics.investmentToDate * 0.2, description: "Youth career development" },
-        { category: "Innovation Lab", amount: hotspot.metrics.investmentToDate * 0.2, description: "Community research center" }
+        { 
+          category: "Renewable Energy Initiative", 
+          amount: hotspot.metrics.investmentToDate * 0.35, 
+          description: "Solar and wind power projects",
+          subProjects: [
+            "Wind Farm Development - $3M",
+            "Solar Panel Installation - $2M",
+            "Energy Storage Systems - $1.5M",
+            "Grid Integration - $1M"
+          ]
+        },
+        { 
+          category: "Forest Conservation", 
+          amount: hotspot.metrics.investmentToDate * 0.25, 
+          description: "Local ecosystem protection",
+          subProjects: [
+            "Forest Preservation - $2M",
+            "Wildlife Protection - $1.5M",
+            "Habitat Restoration - $1M",
+            "Research Programs - $500K"
+          ]
+        },
+        { 
+          category: "Tech Apprenticeships", 
+          amount: hotspot.metrics.investmentToDate * 0.2, 
+          description: "Youth career development",
+          subProjects: [
+            "Coding Bootcamps - $1.5M",
+            "Internship Programs - $1M",
+            "Mentorship Initiative - $800K",
+            "Career Fairs - $700K"
+          ]
+        },
+        { 
+          category: "Innovation Lab", 
+          amount: hotspot.metrics.investmentToDate * 0.2, 
+          description: "Community research center",
+          subProjects: [
+            "Research Facilities - $1.5M",
+            "Equipment & Tools - $1M",
+            "Educational Programs - $800K",
+            "Community Workshops - $700K"
+          ]
+        }
       ],
       "Europe (Ireland)": [
-        { category: "Green Energy Projects", amount: hotspot.metrics.investmentToDate * 0.3, description: "Sustainable power solutions" },
-        { category: "Digital Skills Academy", amount: hotspot.metrics.investmentToDate * 0.25, description: "Technology education center" },
-        { category: "Community Broadband", amount: hotspot.metrics.investmentToDate * 0.25, description: "Rural internet access" },
-        { category: "Local Tech Startups", amount: hotspot.metrics.investmentToDate * 0.2, description: "Entrepreneurship support" }
+        { 
+          category: "Green Energy Projects", 
+          amount: hotspot.metrics.investmentToDate * 0.3, 
+          description: "Sustainable power solutions",
+          subProjects: [
+            "Wind Energy Projects - $2.5M",
+            "Solar Installations - $2M",
+            "Energy Storage - $1.5M",
+            "Smart Grid Development - $1M"
+          ]
+        },
+        { 
+          category: "Digital Skills Academy", 
+          amount: hotspot.metrics.investmentToDate * 0.25, 
+          description: "Technology education center",
+          subProjects: [
+            "Training Facilities - $2M",
+            "Course Development - $1.5M",
+            "Student Support - $1M",
+            "Industry Partnerships - $500K"
+          ]
+        },
+        { 
+          category: "Community Broadband", 
+          amount: hotspot.metrics.investmentToDate * 0.25, 
+          description: "Rural internet access",
+          subProjects: [
+            "Infrastructure Development - $2M",
+            "Equipment Installation - $1.5M",
+            "Technical Support - $1M",
+            "Community Training - $500K"
+          ]
+        },
+        { 
+          category: "Local Tech Startups", 
+          amount: hotspot.metrics.investmentToDate * 0.2, 
+          description: "Entrepreneurship support",
+          subProjects: [
+            "Startup Funding - $1.5M",
+            "Mentorship Programs - $1M",
+            "Workspace Support - $800K",
+            "Networking Events - $700K"
+          ]
+        }
       ],
       "Asia Pacific (Tokyo)": [
-        { category: "Smart City Initiative", amount: hotspot.metrics.investmentToDate * 0.3, description: "Urban technology integration" },
-        { category: "STEM Education Center", amount: hotspot.metrics.investmentToDate * 0.25, description: "Youth technology programs" },
-        { category: "Disaster Resilience", amount: hotspot.metrics.investmentToDate * 0.25, description: "Community safety infrastructure" },
-        { category: "Innovation Hub", amount: hotspot.metrics.investmentToDate * 0.2, description: "Research and development center" }
+        { 
+          category: "Smart City Initiative", 
+          amount: hotspot.metrics.investmentToDate * 0.3, 
+          description: "Urban technology integration",
+          subProjects: [
+            "IoT Infrastructure - $2.5M",
+            "Data Analytics Platform - $2M",
+            "Smart Transportation - $1.5M",
+            "Public Safety Systems - $1M"
+          ]
+        },
+        { 
+          category: "STEM Education Center", 
+          amount: hotspot.metrics.investmentToDate * 0.25, 
+          description: "Youth technology programs",
+          subProjects: [
+            "Learning Labs - $2M",
+            "Robotics Programs - $1.5M",
+            "Coding Workshops - $1M",
+            "Teacher Training - $500K"
+          ]
+        },
+        { 
+          category: "Disaster Resilience", 
+          amount: hotspot.metrics.investmentToDate * 0.25, 
+          description: "Community safety infrastructure",
+          subProjects: [
+            "Early Warning Systems - $2M",
+            "Emergency Response - $1.5M",
+            "Infrastructure Hardening - $1M",
+            "Community Training - $500K"
+          ]
+        },
+        { 
+          category: "Innovation Hub", 
+          amount: hotspot.metrics.investmentToDate * 0.2, 
+          description: "Research and development center",
+          subProjects: [
+            "Research Facilities - $1.5M",
+            "Lab Equipment - $1M",
+            "Innovation Programs - $800K",
+            "Collaboration Space - $700K"
+          ]
+        }
       ]
     };
 
