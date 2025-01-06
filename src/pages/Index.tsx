@@ -19,7 +19,6 @@ const Index = () => {
   };
 
   const validateMapboxToken = (token: string) => {
-    // Basic validation: Mapbox tokens start with 'pk.' for public tokens
     return token.trim().startsWith('pk.');
   };
 
@@ -70,20 +69,22 @@ const Index = () => {
             </div>
           </div>
         </div>
-      ) : null}
-      
-      {isTokenSet && (
-        <>
-          <WorldMap 
-            hotspots={hotspots} 
-            onHotspotClick={handleHotspotClick}
-            mapboxToken={mapboxToken}
-          />
-          <DataPanel 
-            hotspot={selectedHotspot} 
-            isVisible={isPanelVisible} 
-          />
-        </>
+      ) : (
+        <div className="flex flex-col h-screen">
+          <div className="h-[30vh]">
+            <WorldMap 
+              hotspots={hotspots} 
+              onHotspotClick={handleHotspotClick}
+              mapboxToken={mapboxToken}
+            />
+          </div>
+          <div className="h-[70vh] bg-gray-900">
+            <DataPanel 
+              hotspot={selectedHotspot} 
+              isVisible={isPanelVisible} 
+            />
+          </div>
+        </div>
       )}
     </div>
   );
