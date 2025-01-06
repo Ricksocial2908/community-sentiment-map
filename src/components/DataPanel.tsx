@@ -1,6 +1,10 @@
 import { Hotspot } from "@/lib/types";
 import { MetricsCard } from "./MetricsCard";
 import { RecommendationsList } from "./RecommendationsList";
+import { PDFReport } from "./PDFReport";
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 
 interface DataPanelProps {
   hotspot: Hotspot | null;
@@ -256,7 +260,19 @@ export const DataPanel = ({ hotspot, isVisible }: DataPanelProps) => {
       ${isVisible ? 'translate-x-0' : 'translate-x-full'}
     `}>
       <div className="p-8">
-        <h2 className="text-3xl font-bold text-white mb-6">{hotspot.name}</h2>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold text-white">{hotspot.name}</h2>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="ml-4">
+                Generate Report
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl h-[80vh]">
+              <PDFReport hotspot={hotspot} />
+            </DialogContent>
+          </Dialog>
+        </div>
         
         <div className="grid grid-cols-2 gap-4 mb-8">
           <MetricsCard
